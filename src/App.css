@@ -1,4 +1,10 @@
 .App {
   display: flex;
   align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff637b 50%, #FFDA2D 50%);
+  font-family: 'Nunito', sans-serif;
+  color: black;
 }

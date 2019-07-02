@@ -4,7 +4,7 @@ import '../Styles/CocktailList.css';
 
 class CocktailList extends Component {
     static defaultProps = {
-        numCocktailsToGet: 10
+        numCocktailsToGet: 40
     };
     constructor(props) {
         super(props);
@@ -26,8 +26,11 @@ class CocktailList extends Component {
     render() {
         return(
             <div className="CocktailList">
-                <h1>Sippit!</h1>
-                <h4>Cocktail Board</h4>
+                <div className="CocktailList-sidebar">
+                    <h1 className="CocktailList-title">Sippit!</h1>
+                    <img className="logo" src="https://image.flaticon.com/icons/svg/1860/1860254.svg" />
+                    <button className="CocktailList-get-more">New Cocktails</button>
+                </div>
                 <div className="CocktailList-cocktails">
                     {this.state.cocktails.map(cocktail => (
                         <div>{cocktail.strDrink}</div>
