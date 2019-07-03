@@ -1,0 +1,120 @@
+.Cocktail {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eeeeee;
+    font-weight: 400;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+.Cocktail-thumbnail {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 10px 38px rgba(0, 0, 0, .2);
+    border: 1px solid #eeeeee;
+}
+.Cocktail-thumbnail:hover {
+    transform: translateY(-3px);
+    transition: .5s ease;
+    box-shadow: 0 10px 38px rgba(0, 0, 0, .5);
+}
+.Cocktail-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 15%;
+    margin-right: 1rem;
+}
+.Cocktail-buttons-upvote, .Cocktail-buttons-downvote {
+    cursor: pointer;
+    margin: 5px;
+}
+.Cocktail-buttons-upvote:hover{
+    animation-name: move-up;
+    animation-duration: .7s;
+    animation-timing-function: ease-out;
+    color: green;
+    transition: .5s;
+}
+.Cocktail-buttons-downvote:hover {
+    animation-name: move-down;
+    animation-duration: .7s;
+    animation-timing-function: ease-out;
+    color: red;
+    transition: .5s;
+}
+
+
+@keyframes move-up {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+    25%,
+    75% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes move-down {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+    25%,
+    75% {
+        transform: translateY(3px);
+    }
+}
+
+.Cocktail-text {
+    /* width: 75%; */
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.Cocktail-votes {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    border: 3px solid red;
+    text-align: center;
+    box-shadow: 0 10px 38px rgba(0, 0, 0, .2);
+}
+
+@media all and (max-width: 924px) {
+    .Cocktail-thumbnail {
+            height: 75px;
+            width: 75px;
+    }
+    .Cocktail-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: auto;
+        text-align: center;
+    }
+    .Cocktail-buttons {
+        flex-direction: column;
+    }
+    .Cocktail-votes {
+        min-width: 0px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .Cocktail-text {
+        font-size: .9rem;
+    }
+}
